@@ -1,8 +1,45 @@
+# EJERCICIO 4 - Socket Programming Exercises
+
+## Descripción General
+
+Este archivo documenta las soluciones a los ejercicios 4.3.1 y 4.3.2 del taller de sockets en Java. Ambos ejercicios demuestran el uso de programación con sockets TCP para comunicación cliente-servidor.
+
+---
+
 # EJERCICIO 4.3.1 - Square Calculator Socket Server
 
 ## Descripción
 
-Este programa implementa la solución al **Ejercicio 4.3.1** del taller de sockets en Java. El programa consiste en un servidor que recibe un número de un cliente y responde con el cuadrado de ese número, siguiendo el protocolo cliente-servidor usando sockets TCP.
+Servidor que recibe un número de un cliente y responde con el cuadrado de ese número.
+
+### Protocolo
+- **Cliente envía**: número (como string)
+- **Servidor responde**: `"Respuesta: [cuadrado del número]"`
+
+### Archivos
+- `SquareServer.java` - Servidor principal
+- `SquareClient.java` - Cliente de prueba
+
+### Puerto
+- **35000**
+
+---
+
+# EJERCICIO 4.3.2 - Mathematical Function Server
+
+## Descripción
+
+Este programa implementa la solución al **Ejercicio 4.3.2** del taller de networking en Java. El servidor puede recibir números y aplicar operaciones trigonométricas (seno, coseno, tangente), y puede cambiar dinámicamente la operación basándose en comandos especiales.
+
+## Funcionalidad Según el Ejercicio
+
+El servidor cumple exactamente con los requisitos especificados:
+
+1. **Función por defecto**: `coseno`
+2. **Primer número `0`**: Responde `1.000000` (cos(0) = 1)
+3. **Número `π/2`**: Responde `0.000000` (cos(π/2) ≈ 0)
+4. **Comando `"fun:sin"`**: Cambia la operación a seno
+5. **Número `0` después del cambio**: Responde `0.000000` (sin(0) = 0)
 
 ## Funcionalidad
 
