@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleWebServer - Ejercicio 4.5.1</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌐 SimpleWebServer</h1>
+            <p>Ejercicio 4.5.1 - Servidor Web Básico</p>
+        </header>
+        
+        <main>
+            <section class="welcome">
+                <h2>¡Bienvenido!</h2>
+                <p>Este es un servidor web simple implementado en Java que soporta:</p>
+                <ul>
+                    <li>✅ Múltiples solicitudes secuenciales</li>
+                    <li>✅ Archivos HTML</li>
+                    <li>✅ Imágenes (JPG, PNG, GIF, SVG)</li>
+                    <li>✅ CSS y JavaScript</li>
+                    <li>✅ Detección automática de MIME types</li>
+                    <li>✅ Códigos de estado HTTP</li>
+                </ul>
+            </section>
+            
+            <section class="features">
+                <h2>Funcionalidad Implementada</h2>
+                <div class="feature-grid">
+                    <div class="feature">
+                        <h3>📄 Servir Archivos</h3>
+                        <p>Sirve archivos estáticos desde el directorio webroot/</p>
+                    </div>
+                    <div class="feature">
+                        <h3>🔗 Enlaces</h3>
+                        <p><a href="about.html">Ir a página About</a></p>
+                        <p><a href="nonexistent.html">Probar error 404</a></p>
+                    </div>
+                    <div class="feature">
+                        <h3>🎨 Estilos CSS</h3>
+                        <p>Esta página usa <a href="style.css">CSS externo</a></p>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="info">
+                <h2>Información del Servidor</h2>
+                <table>
+                    <tr><td><strong>Puerto:</strong></td><td>8080</td></tr>
+                    <tr><td><strong>Protocolo:</strong></td><td>HTTP/1.1</td></tr>
+                    <tr><td><strong>Directorio web:</strong></td><td>webroot/</td></tr>
+                    <tr><td><strong>Fecha:</strong></td><td><script>document.write(new Date().toLocaleString());</script></td></tr>
+                </table>
+            </section>
+        </main>
+        
+        <footer>
+            <p>SimpleWebServer/1.0 - Ejercicio de Networking en Java<br>
+            <small>Andersson David Sánchez Méndez - Escuela Colombiana de Ingeniería</small></p>
+        </footer>
+    </div>
+</body>
+</html>
