@@ -39,6 +39,8 @@ Demonstrates the 8 main methods of the `java.net.URL` class:
 ```bash
 java -cp target/classes edu.eci.arsw.networking.URLAnalyzer
 ```
+![alt text](assets/image.png)
+![alt text](assets/image-1.png)
 
 ### 📌 Exercise 2: Simple Browser Application  
 **File:** `SimpleBrowser.java`
@@ -52,6 +54,7 @@ HTTP client that downloads web pages and saves them locally:
 ```bash
 java -cp target/classes edu.eci.arsw.networking.SimpleBrowser
 ```
+![alt text](assets/image-2.png)
 
 ### 📌 Exercise 4.3.1: Square Calculator Socket Server
 **Files:** `SquareServer.java`, `SquareClient.java`
@@ -68,6 +71,7 @@ java -cp target/classes edu.eci.arsw.networking.SquareServer
 # Terminal 2 - Start Client  
 java -cp target/classes edu.eci.arsw.networking.SquareClient
 ```
+![alt text](assets/image-3.png)
 
 ### 📌 Exercise 4.3.2: Mathematical Function Server
 **Files:** `MathFunctionServer.java`, `MathFunctionClient.java`,`MathFunctionDemo.java`
@@ -85,6 +89,8 @@ java -cp target/classes edu.eci.arsw.networking.MathFunctionServer
 # Terminal 2 - Start Client
 java -cp target/classes edu.eci.arsw.networking.MathFunctionClient
 ```
+
+![alt text](assets/image-4.png)
 
 ### 📌 Exercise 4.5.1: Simple Web Server
 **Files:** `SimpleWebServer.java`, `SimpleWebServerDemo.java`
@@ -106,6 +112,7 @@ java -cp target/classes edu.eci.arsw.networking.SimpleWebServerDemo
 
 # Access via browser: http://localhost:8081
 ```
+![alt text](assets/image-5.png)
 
 ### 📌 Exercise 5.2.1: UDP Time Server/Client
 **Files:** `TimeServer.java`, `TimeClient.java`, `TimeDemo.java`
@@ -123,6 +130,8 @@ java -cp target/classes edu.eci.arsw.networking.TimeServer
 # Terminal 2 - Start Time Client
 java -cp target/classes edu.eci.arsw.networking.TimeClient
 ```
+![alt text](assets/image-6.png)
+![alt text](assets/image-7.png)
 
 ### 📌 Exercise 6.4.1: RMI Chat Application
 **Files:** `ChatService.java`, `RMIChatApplication.java`, `RMIChatDemo.java`
@@ -140,6 +149,8 @@ java -cp target/classes edu.eci.arsw.networking.RMIChatDemo interactive
 # Manual Configuration
 java -cp target/classes edu.eci.arsw.networking.RMIChatApplication
 ```
+![alt text](assets/image-8.png)
+![alt text](assets/image-9.png)
 
 ## 🛠️ Technologies Used
 
