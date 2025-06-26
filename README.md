@@ -198,7 +198,7 @@ networking/
 
 ### Build the Project
 ```bash
-git clone https://github.com/AnderssonProgramming/networking.git
+git clone https://github.com/AnderssonProgramming/java-networking.git
 cd networking
 mvn clean compile
 ```
