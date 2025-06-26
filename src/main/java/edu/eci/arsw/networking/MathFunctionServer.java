@@ -65,8 +65,8 @@ public class MathFunctionServer {
             return null;
         }
     }
-    
-    private boolean isRunning = true;
+      private volatile boolean isRunning = false;
+    private ServerSocket serverSocket;
     
     /**
      * Main method to start the server
@@ -81,6 +81,11 @@ public class MathFunctionServer {
      * Starts the server and listens for client connections
      */
     public void startServer() {
+        if (isRunning) {
+            System.out.println("El servidor ya está ejecutándose");
+            return;
+        }
+        
         System.out.println("=== MATHEMATICAL FUNCTION SERVER ===");
         System.out.println("Servidor iniciado en puerto: " + SERVER_PORT);
         System.out.println("Función por defecto: coseno (cos)");
@@ -90,7 +95,9 @@ public class MathFunctionServer {
         System.out.println("Presione Ctrl+C para detener el servidor");
         System.out.println();
         
-        try (ServerSocket serverSocket = new ServerSocket(SERVER_PORT)) {
+        try {
+            serverSocket = new ServerSocket(SERVER_PORT);
+            isRunning = true;
             
             while (isRunning) {
                 try {
@@ -100,6 +107,7 @@ public class MathFunctionServer {
                     
                     // Handle client in a separate thread for concurrent connections
                     Thread clientThread = new Thread(() -> handleClient(clientSocket));
+                    clientThread.setDaemon(true);
                     clientThread.start();
                     
                 } catch (IOException e) {
@@ -112,6 +120,8 @@ public class MathFunctionServer {
         } catch (IOException e) {
             System.err.println("Error iniciando el servidor: " + e.getMessage());
             e.printStackTrace();
+        } finally {
+            cleanup();
         }
     }
     
@@ -273,12 +283,26 @@ public class MathFunctionServer {
                 throw new IllegalArgumentException("Función no soportada: " + function);
         }
     }
-    
-    /**
+      /**
      * Stops the server gracefully
      */
     public void stopServer() {
         isRunning = false;
         System.out.println("Deteniendo servidor...");
+        cleanup();
+    }
+    
+    /**
+     * Cleanup method to close the server socket
+     */
+    private void cleanup() {
+        if (serverSocket != null && !serverSocket.isClosed()) {
+            try {
+                serverSocket.close();
+                System.out.println("Socket del servidor cerrado");
+            } catch (IOException e) {
+                System.err.println("Error cerrando socket del servidor: " + e.getMessage());
+            }
+        }
     }
 }
